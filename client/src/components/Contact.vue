@@ -1,7 +1,8 @@
 <template>
-  <div class="contact" @click="choose(contact.id)">
+  <div class="contact">
     <h2>{{contact.name}}</h2>
     <p>тел: {{contact.phone}}</p>
+    <button class="edit" @click="choose(contact.id)"></button>
     <button class="delete" @click.stop="deleteContact(contact.id)"></button>
   </div>
 </template>
@@ -35,15 +36,30 @@ export default {
   h2 {
     margin: 0;
   }
-  .delete {
+  button{
     width: 30px;
     height: 30px;
     position: absolute;
     bottom: -15px;
-    right: 10px;
     border: none;
     padding: 5px;
     border-radius: 50%;
+  }
+  .edit {
+    right: 50px;
+    background: center / 50% no-repeat url("../assets/pencel.png");
+    background-color: lightgreen;
+
+    &:hover {
+      background-color: greenyellow;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .delete {
+    right: 10px;
     background: center / 50% no-repeat url("../assets/gabage.png");
     background-color: coral;
 

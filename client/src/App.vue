@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <input type="text" v-model="filter" />
+      <input type="text" v-model="filter" placeholder="Поиск по имени" />
       <button @click="openEdtiContact">+</button>
     </header>
     <main>
@@ -77,7 +77,6 @@ export default {
         name: "",
         phone: ""
       };
-      console.log(this.choosenContact.id);
     }
   },
   created() {
@@ -107,6 +106,8 @@ header {
   background: coral;
   padding: 10px;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   button {
     display: block;
